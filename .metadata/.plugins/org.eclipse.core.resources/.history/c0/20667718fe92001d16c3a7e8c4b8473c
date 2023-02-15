@@ -1,0 +1,5 @@
+package com.SpringProjectionService;
+
+public interface ProductService {
+
+}

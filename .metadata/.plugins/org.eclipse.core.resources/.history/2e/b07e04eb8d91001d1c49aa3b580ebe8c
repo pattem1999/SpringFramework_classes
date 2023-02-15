@@ -1,0 +1,13 @@
+package com.example.service;
+
+import java.util.List;
+import com.example.demo.Book;
+
+public interface BookService {
+	public void addBook();
+	public void updateBook();
+	public void deleteBook();
+	List<Book> getAllBooks();
+	public Book getById(int id);
+	List<Book> getBycategory(String s);
+}

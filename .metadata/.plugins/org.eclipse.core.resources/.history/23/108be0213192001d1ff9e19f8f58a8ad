@@ -1,0 +1,5 @@
+package com.SpringJpaDemo.Model;
+
+public class Product {
+
+}

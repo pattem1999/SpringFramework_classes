@@ -1,0 +1,98 @@
+package com.example.repository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.Book;
+
+import lombok.Setter;
+@Repository
+@Component("implement")
+public class BookDAOimpl implements BookDAO{
+	@Autowired
+	@Setter
+	private JdbcTemplate jdbc;
+	@Autowired
+	//Book bk;
+	@Override
+	public void addBook(Book bk) {
+		// TODO Auto-generated method stub
+		String sql="insert into book values(?,?,?,?,?)";
+		Object[] args= {bk.getBookid(),bk.getBookname(),bk.getPublisher(),bk.getCategory(),bk.getPrice()};
+		jdbc.update(sql,args);
+		System.out.println("data inserted successfully");
+	}
+
+	@Override
+	public void updateBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		String sql="select * from Books";
+		List<Book> blist=jdbc.query(sql, new RowMapper<Book>() {
+
+			@Override
+			public Book mapRow(ResultSet rs, int r) throws SQLException {
+				Book book=new Book();
+				book.setBookid(rs.getInt(1));
+				book.setBookname(rs.getString(2));
+				book.setCategory(rs.getString(3));
+				book.setPublisher(rs.getString(4));
+				book.setPrice(rs.getInt(5));
+				return book;
+			}
+			
+		});
+		return blist;
+	}
+
+
+	@Override
+	public List<Book> getBycategory(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Book getById(int id) {
+		String sql="Select * from Book";
+		Object[] args= {id};
+		@SuppressWarnings("deprecation")
+		Book nb=jdbc.queryForObject(sql, args,new RowMapper<Book>() {
+			@Override
+			public Book mapRow(ResultSet rs, int r) throws SQLException {
+				Book book=new Book();
+				book.setBookid(rs.getInt(1));
+				book.setBookname(rs.getString(2));
+				book.setCategory(rs.getString(3));
+				book.setPublisher(rs.getString(4));
+				book.setPrice(rs.getInt(5));
+				return book;
+			}
+		});
+		return nb;
+	}
+
+	@Override
+	public void addBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.SpringProjectionInterface;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringDemoProjectionUsingInterfaceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringDemoProjectionUsingInterfaceApplication.class, args);
+	}
+
+}

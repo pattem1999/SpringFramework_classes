@@ -1,0 +1,10 @@
+package com.SpringDemoAuthorMain.service;
+
+import com.SpringDemoAuthorMain.model.Author;
+
+public interface AuthorService {
+
+	void addAuthor(Author author);
+	
+	
+}

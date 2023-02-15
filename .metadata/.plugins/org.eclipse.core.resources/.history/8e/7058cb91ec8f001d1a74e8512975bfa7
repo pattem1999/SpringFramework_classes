@@ -1,0 +1,17 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+@SpringBootApplication
+public class OnlyOneInstanceApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext con= SpringApplication.run(OnlyOneInstanceApplication.class, args);
+		 Student s=con.getBean("student", Student.class);
+	
+		 
+	}
+
+}

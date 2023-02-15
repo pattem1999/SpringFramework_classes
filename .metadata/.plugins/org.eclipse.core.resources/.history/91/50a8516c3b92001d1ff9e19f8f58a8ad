@@ -1,0 +1,5 @@
+package com.SpringJpaDemo.Repository;
+
+public interface ProductRepository {
+
+}

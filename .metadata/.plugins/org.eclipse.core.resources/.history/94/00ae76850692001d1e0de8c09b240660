@@ -1,0 +1,8 @@
+package com.SpringBookRentRepository;
+
+import com.SpringBookRent.Rent;
+
+public interface RentDao {
+	public void addRoom(Rent r);
+
+}

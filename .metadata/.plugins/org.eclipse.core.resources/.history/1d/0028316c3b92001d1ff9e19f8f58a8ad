@@ -1,0 +1,25 @@
+package com.SpringJpaDemo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.SpringJpaDemo.Model.Product;
+import com.SpringJpaDemo.Service.ProductService;
+
+@SpringBootApplication
+@ComponentScan(basePackages = "com.SpringJpaDemo.Model")
+public class SpringDemoDataJpaApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringDemoDataJpaApplication.class, args);
+	}
+
+	@Autowired
+	ProductService ps;
+	
+	Product p1=new Product();
+	p1.setPname("mobile");
+	
+}

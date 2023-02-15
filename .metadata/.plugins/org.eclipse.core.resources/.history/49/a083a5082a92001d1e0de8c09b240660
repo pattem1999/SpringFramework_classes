@@ -1,0 +1,129 @@
+package com.SpringBookRentRepository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.SpringBookRent.Rent;
+//import com.example.demo.Book;
+
+import lombok.Setter;
+
+@Repository
+public class RentDaoImp  implements RentDao{
+
+	@Autowired
+	@Setter
+	private JdbcTemplate jdbc;
+	
+	@Override
+	public void addRoom(Rent r) {
+		// TODO Auto-generated method stub
+		String sql="insert into rent values(?,?,?,?,?,?,?,?,?,?)";
+		Object[] args= {r.getName(),r.getCategory(),r.getPid(),r.getType(),r.getArea(),r.getRentExpected(),
+				r.getSecuritydeposite(),r.getLocation(),r.getBedrooms(),r.getCity()};
+		
+		jdbc.update(sql,args);
+		System.out.println("data inserted successfully ");
+	}
+	public Rent searchByType(String type) {
+		// TODO Auto-generated method stub
+		String sql="select * from rent";
+		//String sql="Select * from Book";
+		Object[] args= {type};
+		@SuppressWarnings("deprecation")
+		Rent nb=jdbc.queryForObject(sql,new RowMapper<Rent>() {
+			@Override
+			public Rent mapRow(ResultSet rs, int r) throws SQLException {
+				//Book book=new Book();
+				Rent re=new Rent();
+				re.setName(rs.getString("name"));
+				re.setCategory(rs.getString("category"));
+				re.setPid(rs.getInt("pid"));
+				re.setType(rs.getString("type"));
+				re.setArea(rs.getString("area"));
+				re.setRentExpected(rs.getDouble("rentexp"));
+				re.setSecuritydeposite(rs.getDouble("securitydep"));
+				re.setLocation(rs.getString("location"));
+				re.setBedrooms(rs.getString("bedrooms"));
+				re.setCity(rs.getString("city"));
+				/*book.setBookname(rs.getString(2));
+				book.setCategory(rs.getString(3));
+				book.setPublisher(rs.getString(4));
+				book.setPrice(rs.getInt(5));*/
+				return re;
+			}
+		},type);
+		return nb;
+	}
+	public void update() {
+		
+		String sql = "update rent  set name = ? where pid= ?";
+		jdbc.update( sql, new Object[]{"kavya", 123212} );
+		System.out.println("update successfully");
+	}
+	@Override
+	public List<Rent>searchRentRange(double x, double y) {
+		// TODO Auto-generated method stub
+		
+		
+		return null;
+	}
+	
+	public void searchById(int id) {
+
+		String sql="select * from room where pid=?";
+
+		@SuppressWarnings("deprecation")
+
+		Rent room=jdbc.queryForObject(sql,new Object[] {id},new RowMapper<Rent>() {
+
+		 
+
+		@Override
+
+		public Rent mapRow(ResultSet rs, int rowNum) throws SQLException {
+
+		Rent re=new Rent();
+
+		re.setName(rs.getString("name"));
+
+		re.setCategory(rs.getString("category"));
+
+		re.setPid(rs.getInt("pid"));
+
+		re.setType(rs.getString("type"));
+
+		re.setArea(rs.getString("area"));
+
+		re.setRentExpected(rs.getDouble("rentexp"));
+
+		re.setSecuritydeposite(rs.getInt("securitydep"));
+
+		re.setLocation(rs.getString("location"));
+
+		re.setBedrooms(rs.getString("bedrooms"));
+
+		re.setCity(rs.getString("city"));
+
+		return re;
+
+		}
+
+		});
+
+		System.out.println(room);
+
+		 
+
+		//jdbc.queryforobj
+
+		}
+	
+	
+}

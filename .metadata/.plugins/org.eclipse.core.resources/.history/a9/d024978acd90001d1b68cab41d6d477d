@@ -1,0 +1,52 @@
+package com.SpringJdbc;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+public class Test {
+
+	public static void main(String[] args) throws DataAccessException {
+		// TODO Auto-generated method stub
+		Student stu=new Student();
+		
+		/*
+		 * stu.setSid(106); stu.setSname("yuvi"); stu.setCity("guntur"); Student
+		 * stu1=new Student(); stu1.setSid(107); stu1.setSname("tarun");
+		 * stu1.setCity("tirupati"); StudentDaoImp sdi=new StudentDaoImp();
+		 * sdi.insert(stu); sdi.insert(stu1);
+		 */
+		//sdi.update(stu);
+		//sdi.delete(stu);
+		//JdbcTemplate jdbc = null;
+		StudentDaoImp sdi=new StudentDaoImp();
+		//JdbcTemplate jdbc=new JdbcTemplate(sdi.getSource());
+		//String SQL = "select * from student where sid = ?";
+		//String SQL1 = "select * from student ";
+		
+		//Student student=jdbc.queryForObject(SQL, new Object[] {100},new StudentRetrive());
+		/*
+		 * Student student=jdbc.queryForObject(SQL, new Object[] {100},new
+		 * StudentRetrive()); System.out.println(student);
+		 */
+		//sdi.retrive(null);
+		/*
+		 * String SQL1 = "select * from Student"; List<Student> students = jdbc.query(
+		 * SQL1, new StudentRetrive());
+		 * 
+		 * for(Student s:students) { System.out.println(s); }
+		 */
+		
+		List<Student> st=sdi.show();
+		
+		for(Student s:st)
+				{
+					System.out.println(s.getSid()+","+s.getSname()+" "+s.getCity());
+				}
+	}
+
+}

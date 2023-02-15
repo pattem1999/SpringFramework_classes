@@ -1,0 +1,13 @@
+package com.SpringBookExample;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringDemoBookApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringDemoBookApplication.class, args);
+	}
+
+}

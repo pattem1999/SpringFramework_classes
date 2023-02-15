@@ -1,0 +1,5 @@
+package com.SpringProjectionInterface.Repository;
+
+public class ProductRepository {
+
+}

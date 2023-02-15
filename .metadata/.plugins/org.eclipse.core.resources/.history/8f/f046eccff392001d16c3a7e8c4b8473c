@@ -1,0 +1,5 @@
+package com.SpringDemoAuthorMain.model;
+
+public class Author {
+
+}

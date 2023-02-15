@@ -1,0 +1,34 @@
+package com.SpringProjectionModel;
+
+public class ProductOneFetch {
+
+	private String pname;
+	
+	private String brand;
+
+	public ProductOneFetch(String pname, String brand) {
+		super();
+		this.pname = pname;
+		this.brand = brand;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	
+	
+	
+}

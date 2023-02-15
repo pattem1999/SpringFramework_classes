@@ -1,0 +1,26 @@
+package com.SpringBookRentService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.SpringBookRent.Rent;
+import com.SpringBookRentRepository.RentDaoImp;
+
+@Service
+public class RoomServiceImp implements RoomService{
+	@Autowired
+	RentDaoImp rdao;
+	@Override
+	public void addRoom(Rent r) {
+		// TODO Auto-generated method stub
+		rdao.addRoom(r);
+	}
+	@Override
+	public Rent searchByType(String type) {
+		
+		return rdao.searchByType(type);
+		
+	}
+
+	
+}

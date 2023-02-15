@@ -1,0 +1,65 @@
+package com.SpringDemoAuthorMain;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.SpringDemoAuthorMain.model.Author;
+import com.SpringDemoAuthorMain.service.AuthorServiceImp;
+
+@SpringBootApplication
+public class SpringDemoAuthorApplication  implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringDemoAuthorApplication.class, args);
+	}
+	
+	@Autowired
+	AuthorServiceImp ai;
+	
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		Author a1=new Author();
+		a1.setId(101);
+		a1.setName("F.Scoot.Fitzgerald");
+		a1.setCountry("USA");
+		
+		
+		Author a2=new Author();
+		a2.setId(102);
+		a2.setName("Jane Austen");
+		a2.setCountry("UK");
+		
+		Author a3=new Author();
+		a3.setId(103);
+		a3.setName("Scott Hanselman");
+		a3.setCountry("USA");
+		
+		Author a4=new Author();
+		a4.setId(104);
+		a4.setName("Janson N.Gaylord");
+		a4.setCountry("USA");
+		
+		Author a5=new Author();
+		a5.setId(105);
+		a5.setName("Pranav Rastogi");
+		a5.setCountry("India");
+		
+		Author a6=new Author();
+		a6.setId(106);
+		a6.setName("Todd Miranda");
+		a6.setCountry("USA");
+		
+		
+		//ai.addAuthor(Arrays.asList(a1,a2,a3,a4,a5,a6));
+		
+		ai.getById(100);
+	}
+
+}

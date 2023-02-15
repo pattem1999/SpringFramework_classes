@@ -1,0 +1,29 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.demo.repository.Bookdaoimp;
+import com.example.demo.service.Bookservice;
+import com.example.demo.service.Bookserviceimp;
+@SpringBootConfiguration
+@SpringBootApplication(scanBasePackages = "com.example.demo")
+public class Sprinoracle31Application implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Sprinoracle31Application.class, args);
+	}
+@Autowired
+Bookservice bs;
+	@Override
+	public void run(String... args) throws Exception {
+		Book b=new Book(1,"java","lavanya","programming",500);
+		bs.addbook(b);
+		//bs.getallbooks(b);
+		
+	}
+
+}

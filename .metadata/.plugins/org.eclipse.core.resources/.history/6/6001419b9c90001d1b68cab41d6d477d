@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+/*
+@Getter
+@Setter*/
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+public class User {
+
+	@Getter
+	@Setter
+	private long id;
+	
+	@Getter
+	@Setter
+	private String fname;
+	
+	private String lname;
+	
+	private int age;
+	
+	private String gender;
+	
+}

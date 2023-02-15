@@ -1,0 +1,14 @@
+package com.SpringDemo.Repository;
+
+import java.util.List;
+
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
+import org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension;
+
+import com.SpringDemo.Model.ProductRetrieve;
+
+public interface ProductRepository extends JpaRepositoryExtension<Product,Integer>{
+	
+	List<ProductRetrieve> findByBrand(String brand);
+
+}

@@ -1,0 +1,55 @@
+package com.SpringJpaDemo;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.SpringJpaDemo.Model.Product;
+import com.SpringJpaDemo.Service.ProductService;
+
+@SpringBootApplication
+@ComponentScan(basePackages = "com.SpringJpaDemo.Service,com.SpringJpaDemo.Model")
+public class SpringDemoDataJpaApplication  implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringDemoDataJpaApplication.class, args);
+	}
+
+	@Autowired
+	ProductService ps;
+	
+	
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		Product p1=new Product("Complain","Complain", "Milk drink ",450.00); 
+		Product p2=new Product("spark","spark", "shoes ",450.00); 
+		Product p3=new Product("Hp","HP", "Electric device ",45000.00); 
+		Product p4=new Product("Lenovo","Lenovo", "Electric device",35000.00); 
+		Product p5=new Product("Apple","Apple", "Electric",99999.00); 
+		
+		//List<Product> pl = Arrays.asList(p1,p2,p3,p4,p5);
+		//System.out.println(ps.addProduct(p1));
+		//p1.setBrand("hiddff");
+		
+		
+	//	ps.addProduct(ob);
+	//	ps.updateProduct(p1);
+		
+		ps.addProduct(Arrays.asList(p1,p2,p3,p4,p5));
+	}
+	
+
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,63 @@
+package com.SpringBookRentRepository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+import com.SpringBookRent.Rent;
+//import com.example.demo.Book;
+
+import lombok.Setter;
+
+@Repository
+public class RentDaoImp  implements RentDao{
+
+	@Autowired
+	@Setter
+	private JdbcTemplate jdbc;
+	@Autowired
+	Rent re;
+	@Override
+	public void addRoom(Rent r) {
+		// TODO Auto-generated method stub
+		String sql="insert into rent values(?,?,?,?,?,?,?,?,?,?)";
+		Object[] args= {r.getName(),r.getCategory(),r.getPid(),r.getType(),r.getArea(),r.getRentExpected(),
+				r.getSecuritydeposite(),r.getLocation(),r.getBedrooms(),r.getCity()};
+		
+		jdbc.update(sql,args);
+		System.out.println("data inserted successfully ");
+	}
+	public Rent searchByType(String type) {
+		// TODO Auto-generated method stub
+		String sql="select * from rent";
+		//String sql="Select * from Book";
+		Object[] args= {type};
+		@SuppressWarnings("deprecation")
+		Rent nb=jdbc.queryForObject(sql, args,new RowMapper<Rent>() {
+			@Override
+			public Rent mapRow(ResultSet rs, int r) throws SQLException {
+				//Book book=new Book();
+				re.setName(rs.getString(1));
+				re.setCategory(rs.getString(2));
+				re.setPid(rs.getInt(3));
+				re.setArea(rs.getString(4));
+				re.setRentExpected(rs.getDouble(5));
+				re.setSecuritydeposite(rs.getDouble(6));
+				re.setLocation(rs.getString(7));
+				re.setBedrooms(rs.getNString(8));
+				re.setCity(rs.getString(9));
+				/*book.setBookname(rs.getString(2));
+				book.setCategory(rs.getString(3));
+				book.setPublisher(rs.getString(4));
+				book.setPrice(rs.getInt(5));*/
+				return re;
+			}
+		});
+		return nb;
+	}
+
+}

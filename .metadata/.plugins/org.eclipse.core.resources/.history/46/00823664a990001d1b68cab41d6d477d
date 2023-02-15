@@ -1,0 +1,30 @@
+package com.SpringJdbc;
+
+import java.sql.JDBCType;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+//import org.springframework.jndi.JndiTemplate;
+
+public class StudentDaoImp implements StudentDao {
+
+	@Override
+	public void insert(Student stu) {
+		// TODO Auto-generated method stub
+		System.out.println("planc");
+	}
+
+	/*
+	 * private JdbcTemplate jdbc;
+	 * 
+	 * @Override public void insert(Student stu) { // TODO Auto-generated method
+	 * stub String sql="insert into student values(?,?,?)";
+	 * 
+	 * Object[] args= {stu.getSid(),stu.getSname(),stu.getCity()};
+	 * jdbc.update(sql,args); }
+	 */
+	
+	
+	
+	
+
+}

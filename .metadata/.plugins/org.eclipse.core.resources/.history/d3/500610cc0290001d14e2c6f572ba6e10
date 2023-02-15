@@ -1,0 +1,23 @@
+package com.example.demo;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+public class Emp {
+
+	//@Getter
+	@NonNull
+	private int empid;
+	
+	private String ename;
+	
+	private double salary;
+	
+}

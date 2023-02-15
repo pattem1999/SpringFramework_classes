@@ -1,0 +1,16 @@
+package com.SpringJdbc;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student stu=new Student();
+		
+		stu.setSid(100);
+		stu.setSname("ramana");
+		stu.setCity("vizag");
+		StudentDaoImp sdi=new StudentDaoImp();
+		sdi.insert(stu);
+	}
+
+}

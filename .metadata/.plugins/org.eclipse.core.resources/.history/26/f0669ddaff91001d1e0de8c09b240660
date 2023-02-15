@@ -1,0 +1,5 @@
+package com.SpringBookRentRepository;
+
+public class RentDaoImp {
+
+}

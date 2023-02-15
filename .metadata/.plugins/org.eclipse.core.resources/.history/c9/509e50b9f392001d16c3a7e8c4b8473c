@@ -1,0 +1,5 @@
+package com.SpringDemoAuthorMain.service;
+
+public class AuthorServiceImp implements AuthorService {
+
+}

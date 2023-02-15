@@ -1,0 +1,4 @@
+spring.dataSource.driver-class-name=com.mysql.jdbc.Driver
+spring.dataSource.url=jdbc:mysql://localhost:3306/?user=root
+spring.dataSource.uname=Dileep
+spring.dataSource.psw=Dileep123

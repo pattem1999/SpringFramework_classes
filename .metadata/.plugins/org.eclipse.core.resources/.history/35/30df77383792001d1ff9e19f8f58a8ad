@@ -1,0 +1,5 @@
+package com.SpringJpaDemo.Exception;
+
+public class ProductNotFoundException extends Exception {
+
+}

@@ -1,0 +1,5 @@
+package com.SpringJdbc;
+
+public class Student {
+
+}

@@ -1,0 +1,32 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.example.repository.BookDAO;
+import com.example.repository.BookDAOimpl;
+import com.example.service.BookService;
+import com.example.service.BookServiceimpl;
+
+import jakarta.annotation.sql.DataSourceDefinition;
+
+@SpringBootApplication
+public class SpringMysqlApplication implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringMysqlApplication.class, args);
+	}
+
+//@Autowired
+	BookServiceimpl bs;
+	public void run(String... args) throws Exception {
+
+		bs=new BookServiceimpl();
+	bs.addBook(new Book(1,"java","ramana","engineer",1000));	
+	}
+}

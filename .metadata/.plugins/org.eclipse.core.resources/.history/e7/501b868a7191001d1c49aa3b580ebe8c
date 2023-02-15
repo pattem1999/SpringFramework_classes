@@ -1,0 +1,54 @@
+package com.SpringBookExample;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookServiceImplement implements BookService {
+
+	@Autowired
+	BookService b;
+	private JdbcTemplate jdbc;
+	@Override
+	public Book getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Book> Category(String c) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addBook() {
+		// TODO Auto-generated method stub
+		String sql="insert into student values(?,?,?,?,?)";
+		Object[] args= {b.getBookid(),b.getBookname(),b.getPublisher(),b.getCategory,b.getPrice()};
+		jdbc.update(sql,args);
+		
+	}
+
+	@Override
+	public void updateBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteBook() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Book> printAllBook() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

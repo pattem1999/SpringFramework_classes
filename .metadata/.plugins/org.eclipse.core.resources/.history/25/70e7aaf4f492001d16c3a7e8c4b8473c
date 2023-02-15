@@ -1,0 +1,21 @@
+package com.SpringDemoAuthorMain.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.SpringDemoAuthorMain.AuthorRepository;
+import com.SpringDemoAuthorMain.model.Author;
+
+@Service
+public class AuthorServiceImp implements AuthorService {
+
+	@Autowired
+	AuthorRepository authorRepository;
+	@Override
+	public void addAuthor(Author author) {
+		// TODO Auto-generated method stub
+		authorRepository.save(author);
+		System.out.println("inserted");
+	}
+
+}

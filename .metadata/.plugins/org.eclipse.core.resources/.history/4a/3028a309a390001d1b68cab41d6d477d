@@ -1,0 +1,11 @@
+package com.SpringJdbc;
+
+public class StudentDaoImp implements StudentDao {
+
+	@Override
+	public void insert(Student stu) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

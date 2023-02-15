@@ -1,0 +1,25 @@
+package com.SpringProjectionModel;
+
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@ToString
+
+public class ProductOneFetch {
+
+	private String pname;
+	
+	private String brand;
+
+	public ProductOneFetch(String pname, String brand) {
+		super();
+		this.pname = pname;
+		this.brand = brand;
+	}
+
+
+	
+	
+	
+}

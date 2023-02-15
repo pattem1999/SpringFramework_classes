@@ -1,0 +1,5 @@
+package com.SpringBookExample.dataRepositry;
+
+public interface BookDao {
+
+}

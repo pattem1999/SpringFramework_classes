@@ -1,0 +1,18 @@
+package com.SpringJpaDemo.Service;
+
+import java.util.List;
+
+import com.SpringJpaDemo.Model.Product;
+
+public interface ProductService {
+	
+	Product addProduct(Product product);
+	
+	void updateProduct(Product prodcut);
+	
+	Product getById(int  pid);
+	
+	List<Product> FindAll();
+	
+
+}

@@ -1,0 +1,5 @@
+package com.SpringDemoTwoTable.Repository;
+
+public class LaptopRepository {
+
+}

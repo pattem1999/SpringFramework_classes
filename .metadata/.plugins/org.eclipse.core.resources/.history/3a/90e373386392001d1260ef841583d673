@@ -1,0 +1,8 @@
+package com.SpringDemoTwoTable.LaptopService;
+
+import com.SpringDemoTwoTable.Model.Laptop;
+
+public interface LaptopService {
+
+	void addLaptop(Laptop laptop);
+}

@@ -1,0 +1,5 @@
+package com.SpringDemoAuthorMain.repository;
+
+public interface AuthorRepository {
+
+}

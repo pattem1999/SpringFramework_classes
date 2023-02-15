@@ -1,0 +1,9 @@
+package com.SpringJdbc;
+
+public interface StudentDao {
+
+	public void insert(Student stu);
+	public void update(Student stu);
+	public void delete(Student stu);
+	
+}

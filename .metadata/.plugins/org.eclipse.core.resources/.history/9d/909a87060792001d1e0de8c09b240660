@@ -1,0 +1,12 @@
+package com.SpringBookRentService;
+
+import com.SpringBookRent.Rent;
+
+public interface RoomService {
+	
+	public void addRoom(Rent r);
+	
+	public Rent searchByType(String type);
+	
+
+}

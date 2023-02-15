@@ -1,0 +1,21 @@
+package com.SpringBookExample;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+
+public interface BookService {
+
+	
+	void addBook();
+	
+	void updateBook();
+	
+	void deleteBook();
+	
+	List<Book> printAllBook();
+	Book getById(int id);
+	
+	List<Book> Category(String c);
+}

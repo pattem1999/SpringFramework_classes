@@ -1,0 +1,13 @@
+package com.SpringDemoTwoTable.LaptopService;
+
+import com.SpringDemoTwoTable.Model.Laptop;
+
+public class LaptopServiceImplement implements LaptopService {
+
+	@Override
+	public void addLaptop(Laptop laptop) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

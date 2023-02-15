@@ -1,0 +1,43 @@
+package com.SpringJpaDemo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.SpringJpaDemo.Model.Product;
+import com.SpringJpaDemo.Service.ProductService;
+
+@SpringBootApplication
+@ComponentScan(basePackages = "com.SpringJpaDemo.Service,com.SpringJpaDemo.Model")
+public class SpringDemoDataJpaApplication  implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringDemoDataJpaApplication.class, args);
+	}
+
+	@Autowired
+	ProductService ps;
+	
+	
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		Product p1=new Product("mobile","realme", "rss",1200.00); 
+		
+		//System.out.println(ps.addProduct(p1));
+		p1.setBrand("hiddff");
+		ps.addProduct(p1);
+		ps.updateProduct(p1);
+	}
+	
+
+	
+	
+	
+	
+	
+	
+}

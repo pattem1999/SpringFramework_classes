@@ -1,0 +1,5 @@
+package com.SpringDemoTwoTable.Model;
+
+public class Laptop {
+
+}

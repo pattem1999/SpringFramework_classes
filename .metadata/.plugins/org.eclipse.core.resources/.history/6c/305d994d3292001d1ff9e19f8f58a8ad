@@ -1,0 +1,5 @@
+package com.SpringJpaDemo.Service;
+
+public interface ProductService {
+
+}
